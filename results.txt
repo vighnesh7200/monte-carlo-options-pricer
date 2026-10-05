@@ -1,0 +1,35 @@
+Black-Scholes call: 10.450584
+
+RMSE vs Black-Scholes
+        N               Plain MC             Antithetic        Control variate   Antithetic + control
+      100               1.568587               1.033431               0.581153               0.306964
+     1000               0.444750               0.331026               0.169530               0.082018
+    10000               0.142825               0.108198               0.055456               0.026209
+   100000               0.046291               0.033314               0.017794               0.008584
+  1000000               0.014714               0.010914               0.005317               0.002855
+
+Log-log slope of RMSE vs N (theory: -0.5)
+  Plain MC               -0.504
+  Antithetic             -0.495
+  Control variate        -0.506
+  Antithetic + control   -0.504
+
+Variance reduction factor vs plain (equal number of normal draws, N=1e5)
+  Plain MC                  1.0x   (  0.0% variance cut)
+  Antithetic                1.9x   ( 48.2% variance cut)
+  Control variate           6.8x   ( 85.2% variance cut)
+  Antithetic + control     29.1x   ( 96.6% variance cut)
+
+95% CI empirical coverage (should be ~0.95)
+  Plain MC               0.945
+  Antithetic             0.945
+  Control variate        0.963
+  Antithetic + control   0.947
+
+Price table, N=1e6, single run (price +/- 1.96 SE)
+    K         BS               Plain MC       Antithetic+control
+   80    24.5888      24.5752 +/- 0.0375      24.5879 +/- 0.00165
+  100    10.4506      10.4288 +/- 0.0288      10.4542 +/- 0.00540
+  120     3.2475       3.2451 +/- 0.0169       3.2492 +/- 0.00224
+
+Saved figures/convergence.png and figures/variance_reduction.png
